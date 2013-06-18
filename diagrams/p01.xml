@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><entities>
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcGroup</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>188</entity-height>
+		<entity-X-Coordinate>18</entity-X-Coordinate>
+		<entity-Y-Coordinate>13</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcUser</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>276</entity-X-Coordinate>
+		<entity-Y-Coordinate>289</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcPerson</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>346</entity-height>
+		<entity-X-Coordinate>18</entity-X-Coordinate>
+		<entity-Y-Coordinate>320</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcLog</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>246</entity-height>
+		<entity-X-Coordinate>276</entity-X-Coordinate>
+		<entity-Y-Coordinate>626</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcMenu</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>820</entity-X-Coordinate>
+		<entity-Y-Coordinate>343</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcRole</entity-name>
+		<entity-width>120</entity-width>
+		<entity-height>166</entity-height>
+		<entity-X-Coordinate>276</entity-X-Coordinate>
+		<entity-Y-Coordinate>14</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcPerm</entity-name>
+		<entity-width>143</entity-width>
+		<entity-height>206</entity-height>
+		<entity-X-Coordinate>548</entity-X-Coordinate>
+		<entity-Y-Coordinate>313</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+
+	<entity>
+		<entity-name>com.zboss.fw.authc.model.FwAuthcPermGroup</entity-name>
+		<entity-width>143</entity-width>
+		<entity-height>148</entity-height>
+		<entity-X-Coordinate>548</entity-X-Coordinate>
+		<entity-Y-Coordinate>14</entity-Y-Coordinate>
+		<primary-collapsed>false</primary-collapsed>
+		<relation-collapsed>false</relation-collapsed>
+		<basic-collapsed>false</basic-collapsed>
+	</entity>
+</entities>

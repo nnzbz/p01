@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-lazy-init="true" xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehcache="http://www.springmodules.org/schema/ehcache" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	<description>Shiro安全配置</description>
+
+	<!-- Shiro's main business-tier object for web-enabled applications -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<!-- 項目自定义的Realm -->
+		<property name="realm" ref="shiroRealm" />
+		<property name="cacheManager" ref="shiroEhcacheManager" />
+	</bean>
+
+	<!-- Shiro Filter -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/authc/login" />
+		<property name="successUrl" value="/" />
+		<property name="unauthorizedUrl" value="/authc/login" />
+		<property name="filterChainDefinitions" value="#{shiroService.loadFilterChainDefinitions()}">
+			<!-- <value> -->
+			<!-- /authc/login = anon -->
+			<!-- /authc/logout = logout -->
+			<!-- /css/** = anon -->
+			<!-- /img/** = anon -->
+			<!-- /js/** = anon -->
+			<!-- /view/** = anon -->
+			<!-- Chrome高版本每次刷新页面都会先访问这里，不用认证以避免两次刷新 -->
+			<!-- /favicon.ico = anon -->
+
+			<!-- /authc/perms = rest[/authc/perms] -->
+			<!-- /** = authc -->
+			<!-- </value> -->
+		</property>
+	</bean>
+
+	<!-- 用户授权信息Cache, 采用EhCache -->
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:config/spring-shiro-ehcache.xml" />
+	</bean>
+
+	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<!-- AOP式方法级权限检查 -->
+	<!-- Enable Shiro Annotations for Spring-configured beans. Only run after -->
+	<!-- the lifecycleBeanProcessor has run: -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+		<property name="proxyTargetClass" value="true" />
+	</bean>
+
+	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+</beans>
